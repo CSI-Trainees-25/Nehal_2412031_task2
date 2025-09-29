@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Task <button id="addTaskBtn">+</button></h1>
+            <div class="task-stats">
+                <span id="totalTasks">0 Task</span> |
+                <span id="inProgress">0 In Progress</span> |
+                <span id="doneTasks">0 Done</span>
+            </div>
+        </header>
+
+        <div id="taskForm" class="task-form hidden">
+            <input type="text" id="taskName" placeholder="Task name">
+            <input type="datetime-local" id="taskDate">
+            <input type="number" id="taskDuration" placeholder="Duration (seconds)">
+            <button id="createTaskBtn">Create</button>
+        </div>
+
+        <div class="task-list" id="taskList"></div>
+
+        <div class="controls">
+            <button id="startAllBtn">Start All</button>
+            <button id="endEarlyBtn">End Early</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

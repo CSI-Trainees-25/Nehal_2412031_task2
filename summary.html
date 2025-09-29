@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Task Summary</h1>
+        <div id="summaryList"></div>
+        <a href="index.html"><button>Back to Tasks</button></a>
+    </div>
+
+    <script>
+        const summaryData = JSON.parse(localStorage.getItem("taskSummary")) || [];
+        const summaryDiv = document.getElementById("summaryList");
+        summaryData.forEach(task => {
+            const div = document.createElement("div");
+            div.className = "summary-item";
+            div.innerHTML = `
+        <p><b>${task.name}</b></p>
+        <p>Status: ${task.status}</p>
+        <p>Scheduled: ${task.date}</p>
+        <p>Executed At: ${task.executedAt || "N/A"}</p>
+      `;
+            summaryDiv.appendChild(div);
+        });
+    </script>
+</body>
+
+</html>
